@@ -1,0 +1,15 @@
+﻿@using FirstWebCoreApplication.Models;
+@model Task<List<Category>>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<ul>
+    <h1>Index</h1>
+    @foreach (var item in await Model)
+    {
+        <li>@item.Name</li>
+    }
+</ul>
+
+

@@ -13,11 +13,12 @@ namespace FirstWebCoreApplication.Controllers
         {
             this.categoryService = categoryService;
         }
-        /// /////////////////////////////////////////////////////
         public IActionResult Index()
         {
-            var categoryList = db.Category.ToList();
-            return View(categoryList);
+
+            return View(categoryService.GetAllCategoriesAsync());
+
         }
     }
+
 }

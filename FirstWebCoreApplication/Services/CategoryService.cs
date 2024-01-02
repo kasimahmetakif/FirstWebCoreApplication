@@ -32,6 +32,7 @@ namespace FirstWebCoreApplication.Services
 
         public Task<Category> GetCategoryByIdAsync(int id)
         {
+
             throw new NotImplementedException();
         }
 
