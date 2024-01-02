@@ -6,6 +6,6 @@
         public Task<Category> GetCategoryByIdAsync(int id);
         public Task<bool> UpdateCategoryAsync(Category category, int id);
         public Task<bool> DeleteCategoryAsync(int id);
-        public Task<bool> CreateCategoryAsync(Category category);
+        public Task<bool> AddCategoryAsync(Category category);
     }
 }

@@ -11,11 +11,17 @@ namespace FirstWebCoreApplication.Services
         {
             this.db = db;
         }
-        public Task<bool> CreateCategoryAsync(Category category)
+        public Task<bool> AddCategoryAsync(Category category)
         {
-            //create yaz
-            throw new NotImplementedException();
-            
+            var result = false;
+            if (!String.IsNullOrEmpty(category.Name))
+            {
+                db.Category.AddAsync(category);
+                db.SaveChangesAsync();
+
+                result = true;
+            }
+            return Task.FromResult(result);
 
         }
 
@@ -32,8 +38,8 @@ namespace FirstWebCoreApplication.Services
 
         public Task<Category> GetCategoryByIdAsync(int id)
         {
-
-            throw new NotImplementedException();
+            var category = db.Category.FirstOrDefault(x => x.Id == id);
+            return Task.FromResult(category);
         }
 
         public Task<bool> UpdateCategoryAsync(Category category, int id)

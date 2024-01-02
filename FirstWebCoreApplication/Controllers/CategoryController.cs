@@ -19,6 +19,16 @@ namespace FirstWebCoreApplication.Controllers
             return View(categoryService.GetAllCategoriesAsync());
 
         }
-    }
 
+        public async Task<IActionResult> DetailAsync(int id)
+        {
+            var category = await categoryService.GetCategoryByIdAsync(id);
+            if(category == null)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(category);
+        }
+
+    }
 }
