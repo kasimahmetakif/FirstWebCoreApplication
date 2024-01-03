@@ -17,6 +17,8 @@ namespace FirstWebCoreApplication
             /////////////////////////// Eklediðimiz kýsým ///////////////////////////
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                options.UseSqlServer(builder.Configuration.GetConnectionString("ApplicationDbConnection")));
+
+            builder.Services.AddTransient<IBlogService, BlogService>();
             
             builder.Services.AddTransient<ICategoryService, CategoryService>();
             /////////////////////////// Eklediðimiz kýsým ///////////////////////////

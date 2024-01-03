@@ -51,12 +51,12 @@ namespace FirstWebCoreApplication.Migrations
                     b.Property<string>("ShortDescription")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserID")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserID");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Blog");
                 });
@@ -211,7 +211,7 @@ namespace FirstWebCoreApplication.Migrations
                 {
                     b.HasOne("FirstWebCoreApplication.Models.User", "User")
                         .WithMany("Blogs")
-                        .HasForeignKey("UserID")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

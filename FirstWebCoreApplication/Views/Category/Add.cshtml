@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h1>Add Category</h1>
+<hr />
+<form method="post">
+    <label for="Name">Name</label>
+    <input type="text" name="Name" id="Name" />
+    <br />
+    <label for="Description">Description</label>
+    <input type="text" name="Description" id="Description" />
+    <br />
+    <label for="IsStatus">Status</label>
+    <input type="checkbox" data-val="true" value="true" name="IsStatus" id="IsStatus" />
+    <br />
+    <input type="submit" value="Add Category" />
+    <br />
+    <label style="color:orange">@ViewData["Message"]</label>
+</form>
+

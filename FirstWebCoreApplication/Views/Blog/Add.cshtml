@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Add";
+}
+
+@model List<Category>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <h3>Add Blog</h3>
+                <hr />
+                <form method="post">
+                    <div class="row mb-2">
+                        <div class="col-3">
+                            <label for="Name"> Blog</label>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" placeholder="Blog Name" name="Name" id="Name" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="ShortDescription"> Short Description</label>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" placeholder="Short Description" name="ShortDescription" id="ShortDescription" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-3">
+                            <label for="Description">Description</label>
+                        </div>
+                        <div class="col-9">
+                            <textarea class="form-control" rows="5" name="Description" id="Description"></textarea>
+
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-3">
+                            <label for="categoryId">Select Category</label>
+                        </div>
+                        <div class="col-9">
+                            <select name="categoryId" id="categoryId" class="form-control">
+                                @foreach (var item in Model)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-3">
+                        <div class="col-3">
+                            <label for="IsStatus">Status</label>
+                        </div>
+                        <div class="col-9">
+                            <input type="checkbox" class="form-check" name="IsStatus" id="IsStatus" data-val="true" value="true" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-9">
+                            <input type="submit" value="Add Blog" class="btn-success" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

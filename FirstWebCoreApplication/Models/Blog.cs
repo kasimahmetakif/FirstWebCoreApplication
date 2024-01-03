@@ -7,7 +7,7 @@ namespace FirstWebCoreApplication.Models
         public DateTime CreateDate { get; set; }
         public string? Image { get; set; }
         public string? ShortDescription { get; set; }
-        public int UserID { get; set; }
+        public int UserId { get; set; }
         public User User { get; set; }
         public List<BlogLike> BlogLikes { get; set; }
         public List<Comment> BlogComments { get; set; }

@@ -54,7 +54,7 @@ namespace FirstWebCoreApplication.Migrations
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ShortDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserID = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsStatus = table.Column<bool>(type: "bit", nullable: false),
@@ -64,8 +64,8 @@ namespace FirstWebCoreApplication.Migrations
                 {
                     table.PrimaryKey("PK_Blog", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Blog_User_UserID",
-                        column: x => x.UserID,
+                        name: "FK_Blog_User_UserId",
+                        column: x => x.UserId,
                         principalTable: "User",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.NoAction);
@@ -155,9 +155,9 @@ namespace FirstWebCoreApplication.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Blog_UserID",
+                name: "IX_Blog_UserId",
                 table: "Blog",
-                column: "UserID");
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_BlogCategory_BlogId",
